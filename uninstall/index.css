@@ -1,0 +1,37 @@
+.instruction-screenshot-frame {
+  margin: 10px 0 0;
+}
+
+.instruction-screenshot-frame .instruction-screenshot {
+  margin: 0;
+}
+
+#options-screenshot {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.instruction-screenshot-frame.is-placeholder {
+  display: grid;
+  min-height: 132px;
+  place-items: center;
+  padding: 20px;
+  border: 1px dashed var(--primary-border);
+  border-radius: var(--radius);
+  background: var(--surface-subtle);
+}
+
+.instruction-screenshot-frame.is-placeholder .instruction-screenshot {
+  display: none;
+}
+
+.instruction-screenshot-placeholder {
+  display: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.instruction-screenshot-frame.is-placeholder .instruction-screenshot-placeholder {
+  display: block;
+}

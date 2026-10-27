@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- This page should not use any external scripts to load faster. -->
+    <!-- Do not add favicon, we add favicon dynamically from the extension for the bookmarked url -->
+    <title>Bookmark redirect...</title>
+    <!-- Keep this scipt self-contained to load as fast as possible -->
+    <script>
+      const targetUrl = new URL(location.href).searchParams.get('url');
+      if (!targetUrl) {
+        // use location.replace() here and below to not store this intermediate url in the browser history.
+        location.replace('../no-url-param/');
+      } else if (isNonDesktop() && !isPrivilegedUrl(targetUrl)) {
+        location.replace(targetUrl);
+      } else {
+        // Expect the extension's content-script to insert the favicon element and perform redirect.
+        // Use "load" event to wait for possible extension content-script execution.
+        // If no favicon element inserted by extension, it means extension is not installed.
+        // See: src/content-script/main.js
+        window.addEventListener('load', () => {
+          const favIconEl = document.getElementById('favicon-from-extension');
+          if (!favIconEl) {
+            const noExtensionUrl = new URL('../no-ext/', location.href);
+            noExtensionUrl.search = location.search;
+            location.replace(noExtensionUrl);
+          }
+        });
+      }
+
+      function isNonDesktop() {
+        return window.innerWidth <= 1024 || navigator.maxTouchPoints > 1;
+      }
+
+      function isPrivilegedUrl(url) {
+        return !/^https?:/i.test(url);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

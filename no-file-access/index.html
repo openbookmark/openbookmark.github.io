@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local file access not enabled</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png" />
+    <link rel="stylesheet" href="../assets/shared.css" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="header-title">
+          <div class="brand-mark">
+            <img src="/assets/icon.svg" alt="" width="48" height="48" />
+          </div>
+          <div class="header-copy">
+            <div class="utility-brand-title">Open bookmarks in a new tab</div>
+            <p>File access</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="panel">
+        <div class="panel-body content-stack">
+          <h2>Local file access not enabled</h2>
+          <p>
+            This bookmark points to a local file, but the extension is not allowed to open local
+            files.
+          </p>
+
+          <p><b>To fix this, follow these steps:</b></p>
+          <ol>
+            <li>Open the <a id="ext-settings-btn" class="link" href="#">extension details</a>.</li>
+            <li>
+              Enable <strong>Allow access to file URLs</strong> for the extension, as shown in the
+              screenshot:
+              <div class="media-frame access-screenshot">
+                <img src="screenshot.png" alt="Allow access to file URLs toggle" />
+              </div>
+            </li>
+            <li>After setting the flag, click the button below:</li>
+          </ol>
+
+          <div class="action-row">
+            <button id="action-btn" class="btn" type="button">Retry opening the bookmark</button>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      const fileUrl = new URL(location.href).searchParams.get('url') || '';
+      const actionBtn = document.getElementById('action-btn');
+      actionBtn.onclick = () => {
+        const retryUrl = new URL('../r/', location.href);
+        retryUrl.searchParams.set('url', fileUrl);
+        location.href = retryUrl;
+      };
+    </script>
+  </body>
+</html>

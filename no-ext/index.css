@@ -1,0 +1,135 @@
+.no-ext-layout {
+  padding: 0;
+}
+
+.page-shell {
+  padding: 24px 0 20px;
+}
+
+.page-header {
+  margin-bottom: 14px;
+}
+
+.no-ext-layout [hidden] {
+  display: none !important;
+}
+
+.recovery-section {
+  align-items: flex-start;
+  padding: 20px 24px;
+  gap: 12px;
+}
+
+.recovery-section .lead {
+  max-width: 62ch;
+  color: var(--fg);
+}
+
+.inline-extension-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  vertical-align: -3px;
+}
+
+.inline-extension-name img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.recovery-actions {
+  width: 100%;
+}
+
+.additional-options {
+  display: flex;
+  margin: 0;
+  padding-left: 1.25rem;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.additional-options > li::marker {
+  color: var(--primary);
+}
+
+.target-action {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 0.62rem 0.95rem;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: var(--primary-contrast);
+  box-shadow: 0 5px 14px rgba(37, 111, 164, 0.18);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+
+.option-action-content {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+}
+
+.option-action:hover {
+  background: var(--primary-dark);
+  color: var(--primary-contrast);
+  box-shadow: 0 8px 20px rgba(37, 111, 164, 0.22);
+  text-decoration: none;
+}
+
+.option-action:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--primary) 28%, transparent);
+  outline-offset: 2px;
+}
+
+.option-action code {
+  display: inline-block;
+  border-color: color-mix(in oklab, currentColor 28%, transparent);
+  background: color-mix(in oklab, currentColor 12%, transparent);
+  color: inherit;
+  line-height: 1.2;
+}
+
+.uninstall-section,
+.removal-section {
+  padding: 12px 24px;
+  border-top: 1px solid var(--border);
+  background: var(--surface-subtle);
+}
+
+.support-copy {
+  font-size: 0.92rem;
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    padding: 16px 0;
+  }
+
+  .page-header {
+    margin-bottom: 12px;
+  }
+
+  .recovery-section {
+    padding: 16px 18px;
+  }
+
+  .uninstall-section,
+  .removal-section {
+    padding: 10px 18px;
+  }
+}

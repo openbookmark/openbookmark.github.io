@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Extension not found</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0R6F2EBBW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V0R6F2EBBW', {
+        // The query contains the clicked bookmark URL. Keep it out of analytics.
+        page_location: `${location.origin}/no-ext/`,
+        page_referrer: '',
+      });
+    </script>
+    <link rel="stylesheet" href="/assets/shared.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="header-title">
+          <div class="brand-mark">
+            <img src="/assets/icon.svg" alt="" width="48" height="48" />
+          </div>
+          <div class="header-copy">
+            <div class="utility-brand-title">Open bookmarks in a new tab</div>
+            <p>Extension status</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="panel">
+        <div class="panel-body no-ext-layout">
+          <section class="recovery-section content-stack" aria-labelledby="page-title">
+            <div class="recovery-heading">
+              <div class="status-icon" aria-hidden="true">!</div>
+              <h1 id="page-title"></h1>
+            </div>
+            <p class="lead">
+              Your bookmark relies on the browser extension
+              <span class="inline-extension-name"
+                ><img src="/assets/icon.svg" alt="" width="18" height="18" /><b
+                  >Open Bookmarks in a New Tab</b
+                ></span
+              >, which is disabled or has been removed.
+            </p>
+            <p><b>How to fix:</b></p>
+
+            <div class="recovery-actions">
+              <ol class="recovery-steps">
+                <li>
+                  Open the
+                  <a
+                    id="reinstall-extension"
+                    class="install-link link external-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                    hidden
+                    >extension page</a
+                  >
+                  in the store.
+                </li>
+                <li>
+                  <p>If you see an option to enable the extension, click it:</p>
+                  <img id="enable-screenshot" class="instruction-screenshot" alt="" />
+                  <p>If you see an option to install the extension, click it:</p>
+                  <img id="reinstall-screenshot" class="instruction-screenshot" alt="" />
+                </li>
+                <li>Now click the bookmark again. It should navigate to the correct page.</li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="uninstall-section content-stack" aria-label="Additional options">
+            <ul class="additional-options">
+              <li>
+                If you want to <b>uninstall the extension correctly</b>, please follow
+                <a class="link external-link" href="/uninstall/" target="_blank" rel="noopener"
+                  >these instructions</a
+                >.
+              </li>
+              <li id="target-option" hidden>
+                <div class="target-action">
+                  <span>To <b>open the bookmark URL</b>, click the button below:</span>
+                  <a
+                    id="target-link"
+                    class="option-action option-action-primary"
+                    target="_blank"
+                    rel="noopener"
+                    hidden
+                  ></a>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <section class="removal-section content-stack">
+            <p class="support-copy muted">
+              Need help?
+              <a id="feedback-link" class="link" href="#" target="_blank" rel="noopener"
+                >Let us know</a
+              >.
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

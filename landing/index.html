@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="/" />
+    <title>Open Bookmarks in a New Tab</title>
+    <!--
+      Cloudflare Pages redirects this route through website/_redirects.
+      Keep this page as a fallback for static hosts that do not support that file.
+    -->
+    <!-- Redirect to the homepage even when JavaScript is disabled. -->
+    <meta http-equiv="refresh" content="0; url=/" />
+    <script>
+      // Preserve legacy query parameters and avoid leaving /landing/ in browser history.
+      const homepageUrl = new URL('/', location.href);
+      homepageUrl.search = location.search;
+      location.replace(homepageUrl);
+    </script>
+  </head>
+  <body>
+    <p>This page has moved to <a href="/">the homepage</a>.</p>
+  </body>
+</html>

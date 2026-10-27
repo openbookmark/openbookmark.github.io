@@ -1,0 +1,2 @@
+# Cloudflare redirect; landing/index.html is the cross-host fallback.
+/landing/ / 301

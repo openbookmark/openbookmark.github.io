@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uninstall is incomplete</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0R6F2EBBW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V0R6F2EBBW', {
+        page_location: `${location.origin}/uninstall/`,
+        page_referrer: '',
+        send_page_view: false,
+      });
+    </script>
+    <link rel="stylesheet" href="/assets/shared.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="header-title">
+          <div class="brand-mark">
+            <img src="/assets/icon.svg" alt="" width="48" height="48" />
+          </div>
+          <div class="header-copy">
+            <div class="utility-brand-title">Open bookmarks in a new tab</div>
+            <p>Restore bookmarks</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="panel">
+        <div class="panel-body content-stack">
+          <div class="recovery-heading">
+            <div class="status-icon" aria-hidden="true">!</div>
+            <h1>Uninstall is incomplete</h1>
+          </div>
+          <p>
+            You've uninstalled the <b>Open bookmarks in a new tab</b> extension, but your bookmarks
+            haven't been restored to the original state.
+          </p>
+          <p>To restore your bookmarks and uninstall the extension correctly:</p>
+          <ol class="recovery-steps">
+            <li>
+              <a class="install-link link external-link" href="#" target="_blank"
+                ><b>Re-install</b></a
+              >
+              the extension:
+              <figure class="instruction-screenshot-frame">
+                <img id="install-screenshot" class="instruction-screenshot" alt="" />
+                <figcaption class="instruction-screenshot-placeholder"></figcaption>
+              </figure>
+            </li>
+            <li>
+              <b>Open</b> the extension's options page:
+              <figure class="instruction-screenshot-frame">
+                <img id="options-screenshot" class="instruction-screenshot" alt="" />
+                <figcaption class="instruction-screenshot-placeholder"></figcaption>
+              </figure>
+            </li>
+            <li>
+              Click <b>Uninstall extension</b>:
+              <figure class="instruction-screenshot-frame">
+                <img id="uninstall-screenshot" class="instruction-screenshot" alt="" />
+                <figcaption class="instruction-screenshot-placeholder"></figcaption>
+              </figure>
+            </li>
+            <li>Confirm by clicking <b>Yes, uninstall</b>.</li>
+          </ol>
+          <p>Watch this video for step-by-step instructions:</p>
+          <div class="media-frame video-frame">
+            <iframe
+              class="uninstall-instructions-video"
+              title="YouTube video player"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      const targetUrl = new URL(location.href).searchParams.get('url');
+      if (targetUrl) {
+        const redirectUrl = new URL('/r/', location.href);
+        redirectUrl.search = location.search;
+        location.replace(redirectUrl);
+      }
+    </script>
+    <title>Open Bookmarks in a New Tab</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0R6F2EBBW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-V0R6F2EBBW');
+    </script>
+    <meta
+      name="description"
+      content="Make every bookmark open in a new tab with a simple left-click. Fast, lightweight Chrome extension with easy install and full control."
+    />
+    <link rel="canonical" href="#" />
+    <meta property="og:title" content="Open Bookmarks in a New Tab — One Click, Always a New Tab" />
+    <meta
+      property="og:description"
+      content="Make every bookmark open in a new tab with a simple left-click. Fast, lightweight Chrome extension with easy install and full control."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/assets/screenshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Open Bookmarks in a New Tab — One Click, Always a New Tab"
+    />
+    <meta
+      name="twitter:description"
+      content="Make every bookmark open in a new tab with a simple left-click."
+    />
+    <meta name="twitter:image" content="/assets/screenshot.png" />
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/assets/shared.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <script type="module" src="/index.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner" role="navigation" aria-label="Primary">
+        <a class="brand" href="#top" aria-label="Home">
+          <img
+            src="/assets/icon.svg"
+            alt="Open Bookmarks in a New Tab logo"
+            width="28"
+            height="28"
+          />
+          <span class="name">Open Bookmarks in a New Tab</span>
+        </a>
+        <nav>
+          <a class="btn install-link" href="#" target="_blank" aria-label="Add to Chrome"
+            >Add to Chrome</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero container" aria-labelledby="hero-title">
+        <h1 id="hero-title">Open bookmarks in a new tab</h1>
+        <p class="subhead">A browser extension that opens bookmarks in a new tab by default.</p>
+        <div class="cta-group">
+          <a class="btn install-link" href="#" target="_blank">Add to Chrome</a>
+          <a
+            class="btn btn-ghost"
+            href="https://dev.to/vitalets/open-browser-bookmarks-in-a-new-tab-part-2-h5p"
+            target="_blank"
+            rel="noopener"
+            >How it works</a
+          >
+        </div>
+        <figure class="figure">
+          <div class="video-frame">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/Ejy5kE-3lAE?si=9E2WFy7v5_sw-u4N&amp;controls=0"
+              title="How the Open Bookmarks in a New Tab extension works"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <figcaption>Left‑click a bookmark to open it in a new tab.</figcaption>
+        </figure>
+      </section>
+
+      <section class="section container">
+        <h2>Why it’s useful</h2>
+        <p class="lead">Left‑click a bookmark and keep your current page untouched.</p>
+        <div class="grid" role="list">
+          <div class="card half" role="listitem">
+            <h3>👉 Stay in flow</h3>
+            <p>No context lost, no back button needed.</p>
+          </div>
+          <div class="card half" role="listitem">
+            <h3>⭐️ Works with any bookmark</h3>
+            <p>Compatible with your existing bookmarks and folders.</p>
+          </div>
+          <div class="card half" role="listitem">
+            <h3>⚡ Fast & lightweight</h3>
+            <p>Quick install and minimal overhead.</p>
+          </div>
+          <div class="card half" role="listitem">
+            <h3>🔒 Private by design</h3>
+            <p>Your bookmarks stay on your device.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container">
+        <h2>How it works</h2>
+        <p>
+          Despite its apparent simplicity, the extension requires a few technical tricks to work
+          properly. Please note: it will modify your bookmark URLs after installation — this is the
+          only way to make bookmarks consistently open in a new tab. The following prefix will be
+          added:
+        </p>
+        <ul>
+          <li><code>https://newtab@...</code></li>
+        </ul>
+
+        <p>This change is safe, fully reversible, and doesn’t change the final destination.</p>
+        <div class="notice" role="note" aria-label="Important note">
+          <b>You can always restore your bookmarks and uninstall the extension correctly:</b>
+          <ol>
+            <li>Open the extension’s options.</li>
+            <li>Click <b>Uninstall extension</b>.</li>
+            <li>Confirm by clicking <b>Yes, uninstall</b>.</li>
+          </ol>
+          <p>
+            <a class="link uninstall-instructions-link" href="#" target="_blank"
+              >Video instruction.</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section class="section container">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Why does it modify my bookmark URLs?</summary>
+          <p>
+            This is a technical requirement to ensure that bookmarks consistently open in a new tab.
+            You can revert all bookmarks to their original state at any time from the extension
+            options page.
+          </p>
+        </details>
+        <details>
+          <summary>Why do some bookmarks have "bookmarks-evz.pages.dev" in the URL?</summary>
+          <p>
+            This is also a technical requirement to support bookmarks like
+            <code>*.google.com</code> opening in a new tab. The extension uses Chrome’s
+            <a
+              href="https://developer.chrome.com/docs/extensions/reference/api/declarativeNetRequest"
+              target="_blank"
+              >declarativeNetRequest API</a
+            >
+            to capture bookmark clicks. Some
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#restricted_domains"
+              target="_blank"
+              >restricted domains</a
+            >
+            cannot be intercepted by this API. To support this, the extension handles these URLs
+            differently: the bookmark points to a static HTML page, which then redirects to the
+            target website. This is exactly what <code>https://bookmarks-evz.pages.dev</code> is
+            used for.
+          </p>
+        </details>
+        <details>
+          <summary>How do I disable the extension?</summary>
+          <p>Use the toggle on the options page to turn the behavior on or off.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Open Bookmarks in a New Tab</div>
+        <div class="footer-links">
+          <a class="footer-link" href="/privacy/">Privacy</a>
+          <a class="footer-link install-link" href="#" target="_blank">Add to Chrome</a>
+          <a
+            class="footer-link"
+            href="https://dev.to/vitalets/open-browser-bookmarks-in-a-new-tab-part-2-h5p"
+            target="_blank"
+            >Read how it works</a
+          >
+          <a class="footer-link support-link" href="#" target="_blank" rel="noopener">Support</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

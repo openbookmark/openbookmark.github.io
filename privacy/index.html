@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Privacy policy for the Open Bookmarks in a New Tab browser extension."
+    />
+    <link rel="canonical" href="https://bookmarks-evz.pages.dev/privacy/" />
+    <title>Privacy Policy — Open Bookmarks in a New Tab</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+    <link rel="stylesheet" href="/assets/shared.css" />
+    <script type="module">
+      import { buildFeedbackUrl } from '/assets/feedback-url.js';
+      import { setCurrentYear } from '/assets/shared.js';
+
+      setCurrentYear();
+
+      document.querySelectorAll('.support-link').forEach((link) => {
+        link.href = buildFeedbackUrl();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <a class="brand" href="/" aria-label="Open Bookmarks in a New Tab homepage">
+          <span class="brand-mark">
+            <img src="/assets/icon.svg" alt="" width="48" height="48" />
+          </span>
+          <div class="header-copy">
+            <div class="utility-brand-title">Open Bookmarks in a New Tab</div>
+            <p>Privacy Policy</p>
+          </div>
+        </a>
+      </header>
+
+      <main class="panel">
+        <article class="panel-body content-stack">
+          <h1>Privacy Policy</h1>
+          <p class="muted">Effective September 3, 2026</p>
+          <p>
+            This policy covers the Open Bookmarks in a New Tab extension and its companion website.
+          </p>
+
+          <h2>Your bookmarks stay private</h2>
+          <p>
+            The extension does not ask for or automatically collect your name, email address,
+            account credentials, payment details, or other directly identifying information. Your
+            bookmark library is not uploaded to us or Google Analytics: bookmark titles, folders,
+            and individual URLs are processed locally on your device.
+          </p>
+          <p>
+            There is one functional exception. For URLs that Chrome prevents the extension from
+            handling directly, the URL of the bookmark you click is sent over HTTPS to our companion
+            website as part of a temporary redirect. It is not added to our analytics or stored in
+            an application database. The website host may process the request in its standard server
+            logs.
+          </p>
+
+          <h2>Data we process</h2>
+          <p>
+            <b>On your device:</b> the extension reads and updates bookmark URLs so they open in a
+            new tab. Settings and operational state are kept in Chrome storage. Recent bookmark-open
+            events, including their URLs, are stored locally, periodically deleted once older than
+            25 hours, and used only to produce a count; the URLs are never included in analytics.
+          </p>
+          <p>
+            <b>Usage and reliability analytics:</b> the extension sends Google Analytics aggregate
+            counts (total bookmarks, bookmarks requiring the companion redirect, bookmarks opened in
+            the previous 24 hours, and restricted hostnames), extension and browser information,
+            options and welcome page views, and short technical error messages. Events use a random
+            installation ID and temporary session ID rather than your identity; we do not use these
+            identifiers to identify you. Google may process standard network metadata such as your
+            IP address. We use this data only to understand adoption, improve the feature, and
+            diagnose reliability.
+          </p>
+          <p>
+            Public pages on the companion website also use Google Analytics, which may process a
+            cookie or client ID, page and session activity, approximate location, browser/device
+            information, and the extension version reported by uninstall pages. Uninstall page URLs
+            also include the extension's random installation ID, which these pages send to Google
+            Analytics so we can connect an uninstall visit with that installation's usage and
+            reliability events. The bookmark redirect page itself does not load Google Analytics.
+          </p>
+          <p>
+            <b>Information you provide:</b> if you email us or use the linked feedback form, we
+            receive the message and contact details you choose to provide and use them only to
+            respond and improve the extension.
+          </p>
+
+          <h2>Sharing and use</h2>
+          <p>
+            Analytics is processed by
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener"
+              >Google Analytics</a
+            >; Google also processes responses submitted through the optional feedback form. Website
+            requests are processed by
+            <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener"
+              >Cloudflare</a
+            >, our hosting provider. We do not sell data, use it for advertising or profiling, or
+            share it with data brokers.
+          </p>
+          <p>
+            The use of information received from Google APIs will adhere to the
+            <a
+              href="https://developer.chrome.com/docs/webstore/program-policies/policies#limited_use"
+              target="_blank"
+              rel="noopener"
+              >Chrome Web Store User Data Policy</a
+            >, including the Limited Use requirements.
+          </p>
+
+          <h2>Retention, security, and your choices</h2>
+          <p>
+            Local session data expires after 30 minutes of inactivity; bookmark-open events are
+            removed during periodic cleanup once older than 25 hours. Other extension data remains
+            until you clear it or uninstall the extension. Google and Cloudflare retain data under
+            their policies and our service settings. Data sent by the extension is encrypted in
+            transit with HTTPS.
+          </p>
+          <p>
+            You can stop extension analytics by uninstalling the extension and can clear website
+            cookies in your browser. For privacy questions or requests, use our
+            <a class="support-link" href="#" target="_blank" rel="noopener">support form</a>. We may
+            update this policy when our practices change and will revise the effective date above.
+          </p>
+        </article>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>© <span id="year"></span> Open Bookmarks in a New Tab</div>
+          <div class="footer-links">
+            <a class="footer-link" href="/">Homepage</a>
+            <a class="footer-link support-link" href="#" target="_blank" rel="noopener">Support</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

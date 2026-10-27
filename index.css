@@ -1,0 +1,99 @@
+main {
+  display: block;
+}
+
+.hero {
+  padding: 5rem 0 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(1.9rem, 3.2vw + 1rem, 3rem);
+  line-height: 1.1;
+  margin: 0 0 0.7rem;
+}
+
+.hero p.subhead {
+  max-width: 720px;
+  margin: 0 auto 1.2rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.cta-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.figure {
+  max-width: 960px;
+  margin: 1.5rem auto 0;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.figure .video-frame {
+  max-width: 900px;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(37, 111, 164, 0.1);
+  overflow: hidden;
+}
+
+.figure figcaption {
+  padding: 0.75rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.section {
+  padding: 2.5rem 0;
+}
+
+.section h2 {
+  font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.card {
+  grid-column: span 12;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+details {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+details + details {
+  margin-top: 0.75rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (min-width: 720px) {
+  .card.half {
+    grid-column: span 6;
+  }
+}
